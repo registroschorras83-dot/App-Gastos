@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Gastos compartidos</title>
+<meta name="description" content="Reparte gastos entre amigos en viajes, findes o lo que sea.">
+<meta name="theme-color" content="#06080d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+
 <style>
   :root{--bg:#06080d;--panel:#0d1220;--line:#1c2638;--ink:#e6edf7;--muted:#7a8aa3;--cyan:#22d3ee;--violet:#a78bfa;--ok:#34d399;--bad:#f43f5e;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   *{box-sizing:border-box}
@@ -474,6 +481,11 @@
   render();
   connect();
 })();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
 </script>
 </body>
 </html>
